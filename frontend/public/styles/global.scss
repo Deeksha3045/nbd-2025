@@ -79,6 +79,9 @@ h4 {
     &.semibold {
         font-weight: 500;
     }
+    &.bold {
+        font-weight: 600;
+    }
 }
 
 
@@ -148,7 +151,7 @@ p {
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1260px;
     --bs-gutter-x: 7.5rem;
     --bs-gutter-y: 0;
     width: 100%;
@@ -167,6 +170,11 @@ p {
 @media(max-width: 991px) {
     .container {
         --bs-gutter-x: 3.5rem;
+    }
+    h1 {
+        &.page-title {
+            font-size: 47px;
+        }
     }
 } 
 
