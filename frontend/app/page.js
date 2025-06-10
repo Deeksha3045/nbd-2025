@@ -10,8 +10,6 @@ import Teamnbd from "@/component/pages/Teamnbd";
 import Review from "@/component/pages/Review";
 import React from "react";
 import Ourwork from "@/component/pages/Ourwork";
-
-
 export default function page() {
   return (
     <>
@@ -19,10 +17,10 @@ export default function page() {
       <HomePageBanner />
       <BannerVideo />
       <Client />
-      <Ourwork/>
+      <Ourwork />
       <Expertise />
       <SoftwarePartners />
-      <Review/>
+      <Review />
       <Teamnbd />
       <ExploreNBD />
       <Footer />

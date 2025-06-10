@@ -5,61 +5,80 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from 'next/image';
-import sampleImg from '../../public/images/team-1.png'; // Replace with your image
+import Workimg from '../../public/images/work-img.png';
+import "../../public/styles/ourwork.scss";
+import { SliderLeftArrow } from '../common/sliderleft-arrow';
+import { SliderRightArrow } from '../common/Sliderright-arrow';
 
 const Ourwork = () => {
-  const swiperRef = useRef(null);
+    const swiperRef = useRef(null);
 
-  return (
-    <section className='ourwork py-16'>
-      <div className='container mx-auto px-4'>
-        <h2 className='text-center text-3xl font-semibold mb-10'>Our latest work</h2>
+    return (
+        <section className="ourwork">
+            {/* Heading only inside container */}
+            <div className="container mx-auto">
+                <h2 className="text-center mb-8">Our latest work</h2>
+            </div>
 
-        <div className='relative'>
-          <Swiper
-            modules={[Navigation]}
-            spaceBetween={20}
-            loop={true}
-            navigation={{
-              nextEl: '.next-btn',
-              prevEl: '.prev-btn',
-            }}
-            breakpoints={{
-              320: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-            className="swiper-container"
-          >
-            <SwiperSlide>
-              <div className="relative rounded-xl overflow-hidden group">
-                <Image
-                  src={sampleImg}
-                  alt="Work example"
-                  className="w-full h-[400px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm">Built a Coliving space booking platform for students and professionals</p>
-                  <span className="text-xs font-semibold mt-2 block">Flat</span>
-                </div>
-              </div>
-            </SwiperSlide>
 
-            {/* Repeat <SwiperSlide> for more items */}
-          </Swiper>
+            <Swiper
+                modules={[Navigation]}
+                spaceBetween={22}
+                slidesPerView={2}
+                centeredSlides={true}
+                loop={true}
+                navigation={{
+                    nextEl: ".next-btn",
+                    prevEl: ".prev-btn",
+                }}
+                breakpoints={{
+                    0: {
+                        slidesPerView: 1,
+                    },
+                    600: {
+                        slidesPerView: 1.05,
+                    },
+                    768: {
+                        slidesPerView: 1.25,
+                    },
+                    1024: {
+                        slidesPerView: 1.25,
+                    },
+                    1280: {
+                        slidesPerView: 1.25,
+                    }
+                }}
+                className="swiper-container work-swiper"
+            >
+                {[1, 2, 3, 4, 5, 6].map((_, i) => (
+                    <SwiperSlide key={i}>
+                        <div className="relative rounded-xl overflow-hidden group">
+                            <Image
+                                src={Workimg}
+                                alt="Work example"
+                                className="w-full object-cover rounded-3xl"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent rounded-3xl"></div>
+                            <div className="absolute bottom-4 px-6 md:px-[62px] pb-6 md:pb-8 text-white flex justify-between items-end w-full gap-4 flex-col md:flex-row">
+                                <h3 className="white">
+                                    Built a Coliving space booking platform for students and professionals
+                                </h3>
+                                <h3 className="white text-[22px]">Flat</h3>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                ))}
+                {/* Navigation Arrows */}
+                <button className="prev-btn absolute top-1/2 left-24 transform -translate-y-1/2  bg-black/50 backdrop-blur-[14px]shadow p-2 md:p-3 rounded-full z-10">
+                    <SliderLeftArrow />
+                </button>
+                <button className="next-btn absolute top-1/2 right-24 transform -translate-y-1/2  bg-black/50 backdrop-blur-[14px] shadow p-2 md:p-3 rounded-full z-10">
+                    <SliderRightArrow />
+                </button>
+            </Swiper>
 
-          {/* Custom Navigation Arrows */}
-          <button className="prev-btn absolute top-1/2 left-[-25px] transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
-            ←
-          </button>
-          <button className="next-btn absolute top-1/2 right-[-25px] transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
-            →
-          </button>
-        </div>
-      </div>
-    </section>
-  );
+        </section >
+    );
 };
 
 export default Ourwork;
