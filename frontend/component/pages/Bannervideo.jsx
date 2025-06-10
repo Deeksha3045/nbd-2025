@@ -9,7 +9,7 @@ export default function BannerVideo() {
       className="bannervideo"
       style={{
         background:
-          "linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 36.71%), #F0F2FA",
+          "linear-gradient(0deg, #FFF 0%, rgba(255, 255, 255, 0.00) 36.71%), #F0F2FA",
       }}
     >
       <div className="container">

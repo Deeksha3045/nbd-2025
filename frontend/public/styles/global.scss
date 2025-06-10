@@ -186,6 +186,11 @@ p {
     .container {
         --bs-gutter-x: 3.5rem;
     }
+    h1 {
+        &.page-title {
+            font-size: 47px;
+        }
+    }
 }
 
 @media(max-width: 767px) {

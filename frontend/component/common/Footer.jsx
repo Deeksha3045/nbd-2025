@@ -97,7 +97,7 @@ function Footer() {
 
                 </div>
             </section>
-            <div className="seprator w-full h-px" style={{ background: "rgba(255, 255, 255, 0.00)", }}></div>
+            <div className="separator"></div>
             <section className="bottom-footer py-20 bg-black">
                 <div className="container">
                     <p className="secondary-font light-grey text-center">

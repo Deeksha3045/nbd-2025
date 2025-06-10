@@ -24,6 +24,7 @@ export default function page() {
       <Review />
       <Teamnbd />
       <ExploreNBD />
+      <Enquirysection />
       <Footer />
     </>
   );
