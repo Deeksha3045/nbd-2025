@@ -1,0 +1,17 @@
+@import 'variables';
+@import 'global';
+
+
+
+.bottom-footer .icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #FFF;
+    font-family: $secondary-font;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.42px;
+}
