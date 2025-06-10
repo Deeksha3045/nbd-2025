@@ -7,6 +7,7 @@ import Backward from '../../public/images/arrow_back.svg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 const Review = () => {
@@ -17,68 +18,70 @@ const Review = () => {
         const nextButton = swiperRef.current?.querySelector('.review-swiper-next');
         const prevButton = swiperRef.current?.querySelector('.review-swiper-prev');
 
-        if (swiperWrapper) {
-            swiperWrapper.style.marginLeft = '14vw';
+        if (swiperWrapper && nextButton && prevButton) {
+            swiperWrapper.style.marginLeft = '9.5vw';
 
-            nextButton?.addEventListener('click', () => {
+            const handleNextClick = () => {
                 swiperWrapper.style.marginLeft = '0px';
-            });
+            };
 
-            prevButton?.addEventListener('click', () => {
-                swiperWrapper.style.marginLeft = '14vw';
-            });
+            const handlePrevClick = () => {
+                swiperWrapper.style.marginLeft = '9.5vw';
+            };
+
+            nextButton.addEventListener('click', handleNextClick);
+            prevButton.addEventListener('click', handlePrevClick);
+
+            return () => {
+                nextButton.removeEventListener('click', handleNextClick);
+                prevButton.removeEventListener('click', handlePrevClick);
+            };
         }
     }, []);
 
     return (
         <section className="reviews padding-120 pt-0" ref={swiperRef}>
             <div className="container pb-[60px]">
-                <div className="flex justify-between relative">
+                <div className="flex justify-between flex-col lg:flex-row relative">
                     <div>
                         <div className="px-2 py-1.5 bg-[#4B22E014] w-max rounded-sm">
                             <p className="!text-[#74689E]">REVIEWS</p>
                         </div>
-                        <h2 className='mt-6 '>What our clients says about us</h2>
+                        <h2 className="mt-6">What our clients says about us</h2>
                     </div>
-                    <div className='flex gap-4 items-center'>
+                    <div className="flex gap-4 items-center justify-end">
                         <div className="review-swiper-prev cursor-pointer">
-                            <Image src={Backward} alt='Backward' />
+                            <Image src={Backward} alt="Backward" />
                         </div>
-                        <div className='swiper-pagination text-lg text-[#3D3D3D] font-normal'></div>
+                        <div className="swiper-pagination !relative !w-auto !bottom-0 text-lg text-[#3D3D3D] font-normal"></div>
                         <div className="review-swiper-next cursor-pointer">
-                            <Image src={Forward} alt='Forward' />
+                            <Image src={Forward} alt="Forward" />
                         </div>
                     </div>
                 </div>
             </div>
 
             <Swiper
+                slidesPerView={3}
                 modules={[Navigation, Pagination]}
-                loop={false}
+                loop={true}
+                spaceBetween={20}
                 grabCursor={true}
-                spaceBetween={10}
-                pagination={{
-                    el: '.swiper-pagination',
-                    type: 'custom',
-                    renderCustom: (swiper, current, total) => {
-                        return `${current} / ${swiper.slides.length}`;
-                    },
-                }}
+                pagination={{ type: 'fraction', el: '.swiper-pagination' }}
                 navigation={{
                     nextEl: '.review-swiper-next',
                     prevEl: '.review-swiper-prev',
                 }}
                 breakpoints={{
-                    320: { slidesPerView: 1.5, spaceBetween: 15 },
-                    640: { slidesPerView: 2 },
-                    768: { slidesPerView: 2.5, spaceBetween: 20 },
-                    1024: { slidesPerView: 3, spaceBetween: 25 },
-                    1280: { slidesPerView: 4, spaceBetween: 30 },
-                    1800: { slidesPerView: 6, spaceBetween: 40 },
+                    320: { slidesPerView: 1, spaceBetween: 20 },
+                    640: { slidesPerView: 1.5, spaceBetween: 20 },
+                    768: { slidesPerView: 2, spaceBetween: 20 },
+                    1024: { slidesPerView: 2.5, spaceBetween: 20 },
+                    1280: { slidesPerView: 3.5, spaceBetween: 20 },
                 }}
                 className="reviewswiper"
             >
-                {[...Array(8)].map((_, index) => (
+                {[...Array(5)].map((_, index) => (
                     <SwiperSlide key={index}>
                         <div className="bg-[#F0F2FA] rounded-2xl p-8">
                             <p className="bold">ELECTRIC ONE</p>

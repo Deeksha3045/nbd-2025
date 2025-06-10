@@ -21,14 +21,14 @@ const Teamnbd = () => {
         const prevButton = swiperRef.current?.querySelector('.team-swiper-prev');
 
         if (swiperWrapper) {
-            swiperWrapper.style.marginLeft = '14vw';
+            swiperWrapper.style.marginLeft = '9.5vw';
 
             nextButton?.addEventListener('click', () => {
                 swiperWrapper.style.marginLeft = '0px';
             });
 
             prevButton?.addEventListener('click', () => {
-                swiperWrapper.style.marginLeft = '14vw';
+                swiperWrapper.style.marginLeft = '9.5vw';
             });
         }
     }, []);
@@ -36,14 +36,14 @@ const Teamnbd = () => {
     return (
         <section className="team-nbd padding-120 !pt-0" ref={swiperRef}>
             <div className="container pb-[60px]">
-                <div className="flex justify-between  relative">
+                <div className="flex justify-between flex-col lg:flex-row  relative">
                     <div>
                         <div className="px-2 py-1.5 bg-[#4B22E014] w-max rounded-sm">
                             <p className="!text-[#74689E]">TEAM NBD</p>
                         </div>
                         <h2 className='mt-6'>Team that delivers success</h2>
                     </div>
-                    <div className='flex gap-4 items-center'>
+                    <div className='flex gap-4 items-center justify-end'>
                         <div className="team-swiper-prev cursor-pointer">
                             <Image src={Backward} alt='Backward' />
                         </div>

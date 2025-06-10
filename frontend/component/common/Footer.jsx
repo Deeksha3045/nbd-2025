@@ -62,7 +62,7 @@ function Footer() {
                                             <p className="small white">Data Science & Engineering</p>
                                         </Link>
                                     </div>
-                                    <div className='w-full md:w-1/2'>
+                                    <div className='w-full md:w-1/2 mt-16 lg:mt-0'>
                                         <p className="secondary-font light-grey mb-8">Quicklinks</p>
                                         <Link href={'#'} className='mb-4 flex gap-2'>
                                             <p className="small white">Career</p>
