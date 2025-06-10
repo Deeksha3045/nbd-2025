@@ -26,7 +26,7 @@ import { Autoplay } from 'swiper/modules';
 
 const Client = () => {
   return (
-    <div className='client-slider padding-120'>
+    <section className='client-slider padding-120'>
       <div className='container'>
         <Swiper
           spaceBetween={20}
@@ -76,7 +76,7 @@ const Client = () => {
           </span>
         </h3>
       </div>
-    </div>
+    </section>
   );
 };
 

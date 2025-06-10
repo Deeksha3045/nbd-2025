@@ -34,7 +34,7 @@ const Teamnbd = () => {
     }, []);
 
     return (
-        <div className="team-nbd padding-120 !pt-0" ref={swiperRef}>
+        <section className="team-nbd padding-120 !pt-0" ref={swiperRef}>
             <div className="container pb-[60px]">
                 <div className="flex justify-between  relative">
                     <div>
@@ -78,7 +78,7 @@ const Teamnbd = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-        </div>
+        </section>
     );
 };
 

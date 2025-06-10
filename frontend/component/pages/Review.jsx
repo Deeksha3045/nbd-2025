@@ -31,7 +31,7 @@ const Review = () => {
     }, []);
 
     return (
-        <div className="reviews padding-120 pt-0" ref={swiperRef}>
+        <section className="reviews padding-120 pt-0" ref={swiperRef}>
             <div className="container pb-[60px]">
                 <div className="flex justify-between relative">
                     <div>
@@ -96,7 +96,7 @@ const Review = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-        </div>
+        </section>
     );
 };
 
