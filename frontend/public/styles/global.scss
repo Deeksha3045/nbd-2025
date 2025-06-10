@@ -128,6 +128,10 @@ p {
         color: #fff !important;
     }
 
+    &.small {
+        font-size: 14px;
+    }
+
     &.bold {
         font-weight: 600;
     }
@@ -165,18 +169,13 @@ p {
     .container {
         --bs-gutter-x: 5.5rem;
     }
-} 
+}
 
 @media(max-width: 991px) {
     .container {
         --bs-gutter-x: 3.5rem;
     }
-    h1 {
-        &.page-title {
-            font-size: 47px;
-        }
-    }
-} 
+}
 
 @media(max-width: 767px) {
     .container {
