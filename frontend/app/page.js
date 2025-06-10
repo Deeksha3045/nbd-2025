@@ -1,3 +1,4 @@
+import Enquirysection from "@/component/common/Enquiry";
 import Header from "@/component/common/Header";
 import BannerVideo from "@/component/pages/Bannervideo";
 import Expertise from "@/component/pages/Expertise";
@@ -15,6 +16,7 @@ export default function page() {
       <Expertise />
       <SoftwarePartners />
       <ExploreNBD />
+      <Enquirysection />
     </>
   );
 }
