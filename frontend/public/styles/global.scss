@@ -27,6 +27,10 @@ h1 {
         line-height: 130%;
         letter-spacing: -1.12px;
     }
+
+    &.white {
+        color: #fff;
+    }
 }
 
 h2 {
@@ -109,6 +113,13 @@ h4 {
 
     &.light-grey {
         color: var(--Text-Secondary-Inv, rgba(255, 255, 255, 0.70));
+    }
+    &.grey {
+        color: #8A8A8A;
+    }
+    &.font {
+        font-size: 15px;
+        font-weight: 500;
     }
 }
 
