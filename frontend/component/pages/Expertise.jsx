@@ -50,18 +50,23 @@ export default function ExpertiseSection() {
               key={index}
               className="relative bg-white rounded-2xl p-8 text-left group transition-transform duration-300 hover:scale-[1.03] hover:shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.10),_0px_4px_6px_-2px_rgba(0,0,0,0.05)]"
             >
-               <div className="absolute w-20 h-20 bg-[rgba(75,34,224,0.2)] rounded-[500px] opacity-[0.54] -z-10 top-4 left-4 transition-opacity duration-300 group-hover:opacity-100"></div>
-
-              <div className="mb-[60px]">
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={60}
-                  height={60}
-                />
+              {/* Violet upper-left corner on hover */}
+              <div className="absolute top-0 left-0 w-36 h-32 z-0 overflow-hidden rounded-tl-2xl pointer-events-none">
+                <div className="w-full h-full bg-white rounded-br-[500px] transition-colors duration-300 group-hover:bg-[rgba(75,34,224,0.2)]"></div>
               </div>
-              <p className="large semi-bold">{item.title}</p>
-              <p className="grey pt-2 pb-2.5">{item.desc}</p>
+
+              <div className="relative z-10">
+                <div className="mb-[60px]">
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={60}
+                    height={60}
+                  />
+                </div>
+                <p className="large semi-bold">{item.title}</p>
+                <p className="grey pt-2 pb-2.5">{item.desc}</p>
+              </div>
             </div>
           ))}
         </div>
