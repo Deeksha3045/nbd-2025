@@ -19,14 +19,14 @@ const Review = () => {
         const prevButton = swiperRef.current?.querySelector('.review-swiper-prev');
 
         if (swiperWrapper && nextButton && prevButton) {
-            swiperWrapper.style.marginLeft = '9.5vw';
+            swiperWrapper.style.marginLeft = '14vw';
 
             const handleNextClick = () => {
                 swiperWrapper.style.marginLeft = '0px';
             };
 
             const handlePrevClick = () => {
-                swiperWrapper.style.marginLeft = '9.5vw';
+                swiperWrapper.style.marginLeft = '14vw';
             };
 
             nextButton.addEventListener('click', handleNextClick);
@@ -62,10 +62,9 @@ const Review = () => {
             </div>
 
             <Swiper
-                slidesPerView={3}
                 modules={[Navigation, Pagination]}
                 loop={true}
-                spaceBetween={20}
+                spaceBetween={24}
                 grabCursor={true}
                 pagination={{ type: 'fraction', el: '.swiper-pagination' }}
                 navigation={{
@@ -73,19 +72,18 @@ const Review = () => {
                     prevEl: '.review-swiper-prev',
                 }}
                 breakpoints={{
-                    320: { slidesPerView: 1, spaceBetween: 20 },
-                    640: { slidesPerView: 1.5, spaceBetween: 20 },
-                    768: { slidesPerView: 2, spaceBetween: 20 },
-                    1024: { slidesPerView: 2.5, spaceBetween: 20 },
-                    1280: { slidesPerView: 3.5, spaceBetween: 20 },
+                    320: { slidesPerView: 1.3 },
+                    768: { slidesPerView: 1.9 },
+                    1024: { slidesPerView: 2.8 },
+                    1200: { slidesPerView: 3.6 },
                 }}
                 className="reviewswiper"
             >
                 {[...Array(5)].map((_, index) => (
                     <SwiperSlide key={index}>
-                        <div className="bg-[#F0F2FA] rounded-2xl p-8">
+                        <div className="bg-[#F0F2FA] rounded-2xl p-4 lg:p-8">
                             <p className="bold">ELECTRIC ONE</p>
-                            <h4 className="grey my-8">
+                            <h4 className="grey my-8  !md:text-lg ">
                                 “Since 2022, Noseberry has managed all our creative work with reliability and excellence, consistently delivering high-quality design creatives & printables for all our projects.”
                             </h4>
                             <div className="flex items-center gap-[22px]">

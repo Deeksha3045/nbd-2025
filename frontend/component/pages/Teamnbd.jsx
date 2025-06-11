@@ -21,14 +21,14 @@ const Teamnbd = () => {
         const prevButton = swiperRef.current?.querySelector('.team-swiper-prev');
 
         if (swiperWrapper) {
-            swiperWrapper.style.marginLeft = '9.5vw';
+            swiperWrapper.style.marginLeft = '14vw';
 
             nextButton?.addEventListener('click', () => {
                 swiperWrapper.style.marginLeft = '0px';
             });
 
             prevButton?.addEventListener('click', () => {
-                swiperWrapper.style.marginLeft = '9.5vw';
+                swiperWrapper.style.marginLeft = '14vw';
             });
         }
     }, []);
@@ -55,20 +55,18 @@ const Teamnbd = () => {
 
             <Swiper
                 modules={[Navigation]}
-                loop={false}
+                loop={true}
                 grabCursor={true}
-                spaceBetween={10}
+                spaceBetween={24}
                 navigation={{
                     nextEl: '.team-swiper-next',
                     prevEl: '.team-swiper-prev',
                 }}
                 breakpoints={{
-                    320: { slidesPerView: 1.5, spaceBetween: 15 },
-                    640: { slidesPerView: 2 },
-                    768: { slidesPerView: 2.5, spaceBetween: 20 },
-                    1024: { slidesPerView: 3, spaceBetween: 25 },
-                    1280: { slidesPerView: 3.5, spaceBetween: 30 },
-                    1800: { slidesPerView: 4.5, spaceBetween: 40 },
+                    320: { slidesPerView: 1.3 },
+                    768: { slidesPerView: 1.9 },
+                    1024: { slidesPerView: 2.8 },
+                    1200: { slidesPerView: 3.6 },
                 }}
                 className="teambottom"
             >

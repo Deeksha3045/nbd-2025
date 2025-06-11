@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import "../../public/styles/client.scss";
 import Image from 'next/image';
+import "../../public/styles/client.scss";
 import Apolo from '../../public/images/apolo.svg';
 import Nivabupa from '../../public/images/nivabupa.svg';
 import Amway from '../../public/images/amway.svg';
@@ -20,16 +20,18 @@ import Vrddi from '../../public/images/vrddi.svg';
 import Ashawnillc from '../../public/images/ashwanillc.svg';
 import Galaxy from '../../public/images/galaxy.svg';
 import Swaasdee from '../../public/images/swaasdee.svg';
+import Leftgradient from '../../public/images/left-gradient.png';
+import Rightgradient from '../../public/images/right-gradient.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 
 const Client = () => {
   return (
-    <section className='client-slider padding-120'>
+    <section className='client-slider  padding-120'>
       <div className='container'>
         <Swiper
-          spaceBetween={20}
+          spaceBetween={24}
           loop={true}
           autoplay={{
             delay: 0,
@@ -37,14 +39,14 @@ const Client = () => {
           }}
           speed={2000}
           breakpoints={{
-            320: { slidesPerView: 2 },
-            640: { slidesPerView: 4 },
-            768: { slidesPerView: 5 },
-            1024: { slidesPerView: 6 },
-            1280: { slidesPerView: 7 },
+            320: { slidesPerView: 4 },
+            640: { slidesPerView: 5 },
+            768: { slidesPerView: 6 },
+            1024: { slidesPerView: 7 },
+            1280: { slidesPerView: 8 },
           }}
           modules={[Autoplay]}
-          className="mySwiper mb-[100px]"
+          className="mySwiper mb-[100px] relative"
         >
           <SwiperSlide><Image src={Apolo} alt="Apolo" className="w-full" /></SwiperSlide>
           <SwiperSlide><Image src={Nivabupa} alt="Nivabupa" className="w-full" /></SwiperSlide>
@@ -64,6 +66,15 @@ const Client = () => {
           <SwiperSlide><Image src={Ashawnillc} alt="Ashwanillc" className="w-full" /></SwiperSlide>
           <SwiperSlide><Image src={Galaxy} alt="Galaxy" className="w-full" /></SwiperSlide>
           <SwiperSlide><Image src={Swaasdee} alt="Swaasdee" className="w-full" /></SwiperSlide>
+
+          <div className="pointer-events-none absolute inset-0 z-50">
+            <div className="absolute -top-1 -left-1">
+              <Image src={Leftgradient} alt='Leftgradient' className='w-1/2 md:w-full h-20 lg:min-h-30' />
+            </div>
+            <div className="absolute -top-1 -right-1 flex justify-end">
+              <Image src={Rightgradient} alt='Rightgradient' className='w-1/2 md:w-full h-20 lg:min-h-30' />
+            </div>
+          </div>
         </Swiper>
         <h3 className='grey text-center'>
           We help brands{' '}
